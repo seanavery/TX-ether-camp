@@ -41847,6 +41847,8 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
+	var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ 181);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41861,16 +41863,54 @@
 	  function BidForm() {
 	    _classCallCheck(this, BidForm);
 	
-	    return _possibleConstructorReturn(this, (BidForm.__proto__ || Object.getPrototypeOf(BidForm)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (BidForm.__proto__ || Object.getPrototypeOf(BidForm)).call(this));
+	
+	    _this.handlePriceChange = _this.handlePriceChange.bind(_this);
+	    _this.handleAmountChange = _this.handleAmountChange.bind(_this);
+	    _this.handleSubmit = _this.handleSubmit.bind(_this);
+	    return _this;
 	  }
 	
 	  _createClass(BidForm, [{
+	    key: 'handlePriceChange',
+	    value: function handlePriceChange(e) {}
+	  }, {
+	    key: 'handleAmountChange',
+	    value: function handleAmountChange(e) {}
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(e) {}
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'Bid Form'
+	        'form',
+	        { onSubmit: this.handleSubmit },
+	        _react2.default.createElement(
+	          _reactBootstrap.FormGroup,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.ControlLabel,
+	            null,
+	            'Price:'
+	          ),
+	          _react2.default.createElement(_reactBootstrap.FormControl, { onChange: this.handlePriceChange })
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.FormGroup,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.ControlLabel,
+	            null,
+	            'Amount:'
+	          ),
+	          _react2.default.createElement(_reactBootstrap.FormControl, { onChange: this.handleAmountChange })
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Button,
+	          { type: 'submit' },
+	          'SUBMIT ASK'
+	        )
 	      );
 	    }
 	  }]);
