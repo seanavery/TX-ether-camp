@@ -57,6 +57,14 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
+	var _BidBox = __webpack_require__(/*! ./components/BidBox */ 178);
+	
+	var _BidBox2 = _interopRequireDefault(_BidBox);
+	
+	var _AskBox = __webpack_require__(/*! ./components/AskBox */ 179);
+	
+	var _AskBox2 = _interopRequireDefault(_AskBox);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80,7 +88,8 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'TX Exchange'
+	        _react2.default.createElement(_BidBox2.default, null),
+	        _react2.default.createElement(_AskBox2.default, null)
 	      );
 	    }
 	  }]);
@@ -22007,6 +22016,106 @@
 	
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+
+/***/ },
+/* 178 */
+/*!*************************************!*\
+  !*** ./app/ui/components/BidBox.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 32);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var BidBox = function (_React$Component) {
+	  _inherits(BidBox, _React$Component);
+	
+	  function BidBox() {
+	    _classCallCheck(this, BidBox);
+	
+	    return _possibleConstructorReturn(this, (BidBox.__proto__ || Object.getPrototypeOf(BidBox)).apply(this, arguments));
+	  }
+	
+	  _createClass(BidBox, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Bid Box'
+	      );
+	    }
+	  }]);
+	
+	  return BidBox;
+	}(_react2.default.Component);
+	
+	module.exports = BidBox;
+
+/***/ },
+/* 179 */
+/*!*************************************!*\
+  !*** ./app/ui/components/AskBox.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 32);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var AskBox = function (_React$Component) {
+	  _inherits(AskBox, _React$Component);
+	
+	  function AskBox() {
+	    _classCallCheck(this, AskBox);
+	
+	    return _possibleConstructorReturn(this, (AskBox.__proto__ || Object.getPrototypeOf(AskBox)).apply(this, arguments));
+	  }
+	
+	  _createClass(AskBox, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Ask Box'
+	      );
+	    }
+	  }]);
+	
+	  return AskBox;
+	}(_react2.default.Component);
+	
+	module.exports = AskBox;
 
 /***/ }
 /******/ ]);
