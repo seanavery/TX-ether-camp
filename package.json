@@ -14,5 +14,9 @@
     "ethereum"
   ],
   "author": "Sean Pollock",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "webpack": "^1.13.3"
+  }
 }
