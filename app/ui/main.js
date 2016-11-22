@@ -1,5 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
+import {Grid, Col} from 'react-bootstrap'
 
 import BidBox from './components/BidBox'
 import AskBox from './components/AskBox'
@@ -10,8 +11,14 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <BidBox />
-        <AskBox />
+        <Grid>
+          <Col xs={12} md={6}>
+            <BidBox />
+          </Col>
+          <Col xs={12} md={6}>
+            <AskBox />
+          </Col>
+        </Grid>
       </div>
     )
   }

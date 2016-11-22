@@ -57,6 +57,8 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
+	var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ 181);
+	
 	var _BidBox = __webpack_require__(/*! ./components/BidBox */ 178);
 	
 	var _BidBox2 = _interopRequireDefault(_BidBox);
@@ -93,8 +95,20 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Navbar2.default, null),
-	        _react2.default.createElement(_BidBox2.default, null),
-	        _react2.default.createElement(_AskBox2.default, null)
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 12, md: 6 },
+	            _react2.default.createElement(_BidBox2.default, null)
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 12, md: 6 },
+	            _react2.default.createElement(_AskBox2.default, null)
+	          )
+	        )
 	      );
 	    }
 	  }]);
