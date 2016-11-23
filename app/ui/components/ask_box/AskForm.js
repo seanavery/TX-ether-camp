@@ -10,18 +10,18 @@ class AskForm extends React.Component {
     this.handleAmountChange = this.handleAmountChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handlePriceChange() {
+  handlePriceChange(e) {
     console.log(e.target.value)
     this.setState({price: e.target.value})
   }
 
-  handleAmountChange() {
+  handleAmountChange(e) {
     console.log(e.target.value)
     this.setState({amount: e.target.value})
   }
 
-  handleSubmit() {
-    
+  handleSubmit(e) {
+
   }
 
   render() {
