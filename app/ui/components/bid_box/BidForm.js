@@ -3,23 +3,25 @@ import {render} from 'react-dom'
 import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
 
 class BidForm extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.handlePriceChange = this.handlePriceChange.bind(this)
     this.handleAmountChange = this.handleAmountChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handlePriceChange(e) {
-
+    conosole.log(e.target.value)
+    this.setState({price: e.target.value})
   }
 
   handleAmountChange(e) {
-
+    console.log(e.target.value)
+    this.setState({amount: e.target.value})
   }
 
   handleSubmit(e) {
-
+    this.props.handleSubmiBid
   }
 
   render() {
