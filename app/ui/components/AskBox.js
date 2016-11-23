@@ -28,7 +28,7 @@ class AskBox extends React.Component {
     return (
       <div>
         <AskForm submitAsk={this.submitAsk} />
-        <AskLedger />
+        <AskLedger price={this.state.price} amount={this.state.amount} />
       </div>
     )
   }
