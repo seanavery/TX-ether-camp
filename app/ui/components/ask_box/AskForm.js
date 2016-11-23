@@ -12,15 +12,16 @@ class AskForm extends React.Component {
   }
   handlePriceChange() {
     console.log(e.target.value)
-    
+    this.setState({price: e.target.value})
   }
-}
-  handleAmountChange() {
 
+  handleAmountChange() {
+    console.log(e.target.value)
+    this.setState({amount: e.target.value})
   }
 
   handleSubmit() {
-
+    
   }
 
   render() {
@@ -41,5 +42,6 @@ class AskForm extends React.Component {
     )
   }
 }
+
 
 module.exports = AskForm
