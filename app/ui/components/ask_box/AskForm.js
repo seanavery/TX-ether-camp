@@ -5,12 +5,18 @@ import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
 class AskForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      price: [],
-      amount: []
-    }
 
+    this.handlePriceChange = this.handlePriceChange.bind(this)
+    this.handleAmountChange = this.handleAmountChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handlePriceChange() {
+    console.log(e.target.value)
+    
+  }
+}
+  handleAmountChange() {
+
   }
 
   handleSubmit() {
@@ -20,6 +26,17 @@ class AskForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} >
+        <FormGroup>
+          <ControlLabel>Price:</ControlLabel>
+          <FormControl onChange={this.handlePriceChange} />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Price:</ControlLabel>
+          <FormControl onChange={this.handleAmountChange} />
+        </FormGroup>
+        <Button type='submit'>
+          SUBMIT ASK
+        </Button>
       </form>
     )
   }
