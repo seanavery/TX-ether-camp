@@ -18,7 +18,7 @@ class BidLedger extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.price((price, i) => {
+          {this.props.price.map((price, i) => {
             return (
               <tr key={i}>
                 <td>{i}</td>

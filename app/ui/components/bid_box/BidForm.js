@@ -22,6 +22,7 @@ class BidForm extends React.Component {
 
   handleSubmit(e) {
     this.props.submitBid(this.state.price, this.state.amount)
+    e.preventDefault()
   }
 
   render() {

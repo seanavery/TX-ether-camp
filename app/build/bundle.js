@@ -41608,10 +41608,10 @@
 	      var newAmountArray = (0, _reactAddonsUpdate2.default)(this.state.amount, { $push: [amount] });
 	      console.log(newPriceArray);
 	      console.log(newAmountArray);
-	      // this.setState({
-	      //   price: newPriceArray,
-	      //   amount: newAmountArray
-	      // })
+	      this.setState({
+	        price: newPriceArray,
+	        amount: newAmountArray
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -41620,7 +41620,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_BidForm2.default, { submitBid: this.submitBid }),
-	        _react2.default.createElement(_BidLedger2.default, null)
+	        _react2.default.createElement(_BidLedger2.default, { price: this.state.price, amount: this.state.amount })
 	      );
 	    }
 	  }]);
@@ -41687,6 +41687,7 @@
 	    key: 'handleSubmit',
 	    value: function handleSubmit(e) {
 	      this.props.submitBid(this.state.price, this.state.amount);
+	      e.preventDefault();
 	    }
 	  }, {
 	    key: 'render',
@@ -41796,7 +41797,7 @@
 	        _react2.default.createElement(
 	          'tbody',
 	          null,
-	          this.props.price(function (price, i) {
+	          this.props.price.map(function (price, i) {
 	            return _react2.default.createElement(
 	              'tr',
 	              { key: i },
@@ -41903,6 +41904,8 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
+	var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ 178);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41914,20 +41917,27 @@
 	var AskForm = function (_React$Component) {
 	  _inherits(AskForm, _React$Component);
 	
-	  function AskForm() {
+	  function AskForm(props) {
 	    _classCallCheck(this, AskForm);
 	
-	    return _possibleConstructorReturn(this, (AskForm.__proto__ || Object.getPrototypeOf(AskForm)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (AskForm.__proto__ || Object.getPrototypeOf(AskForm)).call(this, props));
+	
+	    _this.state = {
+	      price: [],
+	      amount: []
+	    };
+	
+	    _this.handleSubmit = _this.handleSubmit.bind(_this);
+	    return _this;
 	  }
 	
 	  _createClass(AskForm, [{
+	    key: 'handleSubmit',
+	    value: function handleSubmit() {}
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'Ask Form here'
-	      );
+	      return _react2.default.createElement('form', { onSubmit: this.handleSubmit });
 	    }
 	  }]);
 	

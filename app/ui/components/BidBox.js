@@ -20,17 +20,17 @@ class BidBox extends React.Component {
     var newAmountArray = update(this.state.amount, {$push: [amount]})
     console.log(newPriceArray)
     console.log(newAmountArray)
-    // this.setState({
-    //   price: newPriceArray,
-    //   amount: newAmountArray
-    // })
+    this.setState({
+      price: newPriceArray,
+      amount: newAmountArray
+    })
   }
 
   render() {
     return (
       <div>
         <BidForm submitBid={this.submitBid}/>
-        <BidLedger />
+        <BidLedger price={this.state.price} amount={this.state.amount}/>
       </div>
     )
   }
