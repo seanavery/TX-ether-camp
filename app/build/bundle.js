@@ -41651,7 +41651,7 @@
 	  _createClass(BidForm, [{
 	    key: 'handlePriceChange',
 	    value: function handlePriceChange(e) {
-	      conosole.log(e.target.value);
+	      console.log(e.target.value);
 	      this.setState({ price: e.target.value });
 	    }
 	  }, {
@@ -41663,7 +41663,7 @@
 	  }, {
 	    key: 'handleSubmit',
 	    value: function handleSubmit(e) {
-	      this.props.handleSubmiBid;
+	      this.props.submitBid(this.state.price, this.state.amount);
 	    }
 	  }, {
 	    key: 'render',

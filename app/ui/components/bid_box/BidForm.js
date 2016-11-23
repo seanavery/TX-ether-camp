@@ -11,7 +11,7 @@ class BidForm extends React.Component {
   }
 
   handlePriceChange(e) {
-    conosole.log(e.target.value)
+    console.log(e.target.value)
     this.setState({price: e.target.value})
   }
 
@@ -21,7 +21,7 @@ class BidForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.handleSubmiBid
+    this.props.submitBid(this.state.price, this.state.amount)
   }
 
   render() {
