@@ -41909,7 +41909,7 @@
 	        _react2.default.createElement(
 	          _reactBootstrap.Button,
 	          { type: 'submit' },
-	          'SUBMIT ASK'
+	          'SUBMIT BID'
 	        )
 	      );
 	    }

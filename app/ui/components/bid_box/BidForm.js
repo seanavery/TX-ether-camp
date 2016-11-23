@@ -11,7 +11,7 @@ class BidForm extends React.Component {
   }
 
   handlePriceChange(e) {
-    
+
   }
 
   handleAmountChange(e) {
@@ -34,7 +34,7 @@ class BidForm extends React.Component {
           <FormControl onChange={this.handleAmountChange} />
         </FormGroup>
         <Button type='submit'>
-          SUBMIT ASK
+          SUBMIT BID
         </Button>
       </form>
     )
