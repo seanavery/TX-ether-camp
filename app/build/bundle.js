@@ -41770,7 +41770,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        _reactBootstrap.Table,
-	        null,
+	        { striped: true, bordered: true, condensed: true, hover: true },
 	        _react2.default.createElement(
 	          'thead',
 	          null,
@@ -42049,7 +42049,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        _reactBootstrap.Table,
-	        null,
+	        { striped: true, bordered: true, condensed: true, hover: true },
 	        _react2.default.createElement(
 	          'thead',
 	          null,

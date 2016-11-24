@@ -9,7 +9,7 @@ class BidLedger extends React.Component {
 
   render() {
     return (
-      <Table>
+      <Table striped bordered condensed hover>
         <thead>
           <tr>
             <th>#</th>
