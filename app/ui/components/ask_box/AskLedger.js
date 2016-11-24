@@ -16,16 +16,18 @@ class AskLedger extends React.Component {
             <th>Price</th>
             <th>Amount</th>
           </tr>
-          <tbody>
-            {this.props.price.map((price, i) => {
+        </thead>
+        <tbody>
+          {this.props.price.map((price, i) => {
+            return (
               <tr key={i}>
                 <th>#</th>
                 <th>{price}</th>
                 <th>5</th>
               </tr>
-            })}
-          </tbody>
-        <thead>
+            )
+          })}
+        </tbody>
       </Table>
     )
   }

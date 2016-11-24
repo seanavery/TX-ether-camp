@@ -21,7 +21,8 @@ class AskForm extends React.Component {
   }
 
   handleSubmit(e) {
-
+    this.props.submitAsk(this.state.price, this.state.amount)
+    e.preventDefault()
   }
 
   render() {

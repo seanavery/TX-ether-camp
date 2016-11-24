@@ -41853,7 +41853,7 @@
 	
 	var _AskForm2 = _interopRequireDefault(_AskForm);
 	
-	var _AskLedger = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./ask_box/AskLedger\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _AskLedger = __webpack_require__(/*! ./ask_box/AskLedger */ 435);
 	
 	var _AskLedger2 = _interopRequireDefault(_AskLedger);
 	
@@ -41964,7 +41964,10 @@
 	    }
 	  }, {
 	    key: 'handleSubmit',
-	    value: function handleSubmit(e) {}
+	    value: function handleSubmit(e) {
+	      this.props.submitAsk(this.state.price, this.state.amount);
+	      e.preventDefault();
+	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -42006,7 +42009,105 @@
 	module.exports = AskForm;
 
 /***/ },
-/* 435 */,
+/* 435 */
+/*!************************************************!*\
+  !*** ./app/ui/components/ask_box/AskLedger.js ***!
+  \************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 32);
+	
+	var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ 178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var AskLedger = function (_React$Component) {
+	  _inherits(AskLedger, _React$Component);
+	
+	  function AskLedger(props) {
+	    _classCallCheck(this, AskLedger);
+	
+	    return _possibleConstructorReturn(this, (AskLedger.__proto__ || Object.getPrototypeOf(AskLedger)).call(this, props));
+	  }
+	
+	  _createClass(AskLedger, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _reactBootstrap.Table,
+	        null,
+	        _react2.default.createElement(
+	          'thead',
+	          null,
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              '#'
+	            ),
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              'Price'
+	            ),
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              'Amount'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'tbody',
+	          null,
+	          this.props.price.map(function (price, i) {
+	            return _react2.default.createElement(
+	              'tr',
+	              { key: i },
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                '#'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                price
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                '5'
+	              )
+	            );
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return AskLedger;
+	}(_react2.default.Component);
+	
+	module.exports = AskLedger;
+
+/***/ },
 /* 436 */
 /*!*************************************!*\
   !*** ./app/ui/components/Navbar.js ***!
