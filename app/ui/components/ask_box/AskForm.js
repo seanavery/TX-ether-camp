@@ -33,7 +33,7 @@ class AskForm extends React.Component {
           <FormControl onChange={this.handlePriceChange} />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Price:</ControlLabel>
+          <ControlLabel>Amount:</ControlLabel>
           <FormControl onChange={this.handleAmountChange} />
         </FormGroup>
         <Button type='submit'>

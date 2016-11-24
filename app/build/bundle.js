@@ -41990,7 +41990,7 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.ControlLabel,
 	            null,
-	            'Price:'
+	            'Amount:'
 	          ),
 	          _react2.default.createElement(_reactBootstrap.FormControl, { onChange: this.handleAmountChange })
 	        ),
