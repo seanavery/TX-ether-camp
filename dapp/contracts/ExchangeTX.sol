@@ -1,5 +1,8 @@
 pragma solidity ^0.4.0;
 
+import "AskEscrowTX.sol";
+import "BidEscrowTX.sol";
+
 contract ExchangeTX {
     struct Bid {
         uint price;
@@ -115,7 +118,7 @@ contract ExchangeTX {
 
     function cleanBidLedger() returns (bool) {
         for(uint i = BidLedger.length - 1; i >= 0; i--) {
-            if(BidLedger[i].amount <= 0) {
+            if(BidLedger[i].amount > 0) {
                 BidLedger.length = i + 1;
                 return true;
             }
