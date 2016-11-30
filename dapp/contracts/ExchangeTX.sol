@@ -1,8 +1,5 @@
 pragma solidity ^0.4.0;
 
-import "AskEscrowTX.sol";
-import "BidEscrowTX.sol";
-
 contract ExchangeTX {
     struct Bid {
         uint price;
@@ -124,6 +121,14 @@ contract ExchangeTX {
             }
         }
         return false;
+    }
+
+    function getBidLength() returns (uint) {
+        return BidLedger.length;
+    }
+
+    function getAskLength() returns (uint) {
+        return AskLedger.length;
     }
 
 }
