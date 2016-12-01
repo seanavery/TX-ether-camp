@@ -78,13 +78,13 @@ contract ExchangeTX {
     }
 
     function matchBid(uint bid_index, uint ask_index) internal returns (bool) {
-        if(BidLedger[bid_index].amount <= 0 || BidLedger[bid_index].price < AskLedger[ask_index].price) {
+        if(BidLedger[bid_index].amount == 0 || BidLedger[bid_index].price < AskLedger[ask_index].price) {
             return true;
         }
         BidLedger[bid_index].amount--;
         AskLedger[ask_index].amount--;
-        if(AskLedger[ask_index].amount <= 0 ) {
-            if(ask_index <= 0) {
+        if(AskLedger[ask_index].amount == 0 ) {
+            if(ask_index == 0) {
                 return true;
             }
             ask_index--;
