@@ -42,10 +42,7 @@ contract ExchangeTX {
                 for(uint k = 0; k < tempLedger.length; k++) {
                     BidLedger[k+i+1] = tempLedger[k];
                 }
-                if(AskLedger.length > 0) {
-                    matchBid(i, AskLedger.length - 1);
-                    return true;
-                }
+                break;
             }
         }
         BidLedger.push(b);
