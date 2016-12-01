@@ -13,6 +13,8 @@ contract ExchangeTX {
     Bid[] public BidLedger;
     Ask[] public AskLedger;
 
+    uint Timestamp;
+
     modifier bidInMarket(uint _price) {
         if (AskLedger.length > 0) {
             if (_price < AskLedger[AskLedger.length-1].price ) throw;
