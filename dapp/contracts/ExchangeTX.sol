@@ -149,4 +149,7 @@ contract ExchangeTX {
         return AskLedger.length;
     }
 
+    function getBlockStamp() returns(uint) {
+        return BlockStamp;
+    }
 }
