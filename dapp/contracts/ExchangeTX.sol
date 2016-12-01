@@ -141,6 +141,10 @@ contract ExchangeTX {
         return false;
     }
 
+    function blockStampUpdate() {
+        BlockStamp = now;
+    }
+
     function getBidLength() returns (uint) {
         return BidLedger.length;
     }
