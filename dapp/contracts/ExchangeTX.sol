@@ -42,10 +42,12 @@ contract ExchangeTX {
                 for(uint k = 0; k < tempLedger.length; k++) {
                     BidLedger[k+i+1] = tempLedger[k];
                 }
+                matchBid(i, AskLedger.length - 1);
                 return true;
             }
         }
         BidLedger.push(b);
+        matchBid(i, AskLedger.length - 1);
         return true;
     }
 
@@ -103,23 +105,25 @@ contract ExchangeTX {
         return(matchAsk(ask_index, bid_index));
     }
 
-    function cleanAskLedger() returns (bool) {
-        for(uint i = AskLedger.length - 1; i >= 0; i--) {
-            if(AskLedger[i].amount > 0) {
-                AskLedger.length = i + 1;
+    function cleanBidLedger() returns (bool) {
+        for(uint i = BidLedger.length; i > 0; i--) {
+            if(BidLedger[i-1].amount > 0) {
+                BidLedger.length = i;
                 return true;
             }
         }
+        BidLedger.length = 0;
         return false;
     }
 
-    function cleanBidLedger() returns (bool) {
-        for(uint i = BidLedger.length - 1; i >= 0; i--) {
-            if(BidLedger[i].amount > 0) {
-                BidLedger.length = i + 1;
+    function cleanAskLedger() returns (bool) {
+        for(uint i = AskLedger.length; i > 0; i--) {
+            if(AskLedger[i-1].amount > 0) {
+                AskLedger.length = i;
                 return true;
             }
         }
+        AskLedger.length = 0;
         return false;
     }
 
