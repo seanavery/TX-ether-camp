@@ -67,13 +67,14 @@ contract ExchangeTX {
                 for(uint k = 0; k < tempLedger.length; k++) {
                     AskLedger[k+i+1] = tempLedger[k];
                 }
-                matchAsk(i, BidLedger.length - 1);
-                return true;
+                break;
             }
         }
         AskLedger.push(a);
-        matchAsk(i, BidLedger.length - 1);
-        return true;
+        if(BidLedger.length > 0) {
+            matchAsk(i, BidLedger.length - 1);
+            return true;
+        }
     }
 
     function matchBid(uint bid_index, uint ask_index) internal returns (bool) {
