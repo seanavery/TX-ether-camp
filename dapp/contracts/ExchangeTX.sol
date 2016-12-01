@@ -34,6 +34,7 @@ contract ExchangeTX {
     }
 
     function submitBid(uint _price, uint _amount) bidInMarket(_price) returns (bool) {
+        blockStampUpdate();
         Bid memory b;
         b.price = _price;
         b.amount = _amount;
@@ -59,6 +60,7 @@ contract ExchangeTX {
     }
 
     function submitAsk(uint _price, uint _amount) askInMarket(_price) returns (bool) {
+        blockStampUpdate();
         Ask memory a;
         a.price = _price;
         a.amount = _amount;
