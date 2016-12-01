@@ -73,7 +73,7 @@ contract ExchangeTX {
         return true;
     }
 
-    function matchBid(uint bid_index, uint ask_index) returns (bool) {
+    function matchBid(uint bid_index, uint ask_index) internal returns (bool) {
         if(BidLedger[bid_index].amount <= 0 || BidLedger[bid_index].price < AskLedger[ask_index].price) {
             return true;
         }
