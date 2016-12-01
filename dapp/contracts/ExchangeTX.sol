@@ -13,7 +13,11 @@ contract ExchangeTX {
     Bid[] public BidLedger;
     Ask[] public AskLedger;
 
-    uint Timestamp;
+    uint BlockStamp;
+
+    function ExchangeTX() {
+        BlockStamp = now;
+    }
 
     modifier bidInMarket(uint _price) {
         if (AskLedger.length > 0) {
