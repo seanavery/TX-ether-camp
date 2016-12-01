@@ -13,7 +13,7 @@ contract ExchangeTX {
     Bid[] public BidLedger;
     Ask[] public AskLedger;
 
-    modifier bidInMarket(uint _price) { // Modifier
+    modifier bidInMarket(uint _price) {
         if (AskLedger.length > 0) {
             if (_price < AskLedger[AskLedger.length-1].price ) throw;
         }
@@ -79,12 +79,14 @@ contract ExchangeTX {
 
     function matchBid(uint bid_index, uint ask_index) internal returns (bool) {
         if(BidLedger[bid_index].amount == 0 || BidLedger[bid_index].price < AskLedger[ask_index].price) {
+            cleanAskLedger();
             return true;
         }
         BidLedger[bid_index].amount--;
         AskLedger[ask_index].amount--;
         if(AskLedger[ask_index].amount == 0 ) {
             if(ask_index == 0) {
+                cleanAskLedger();
                 return true;
             }
             ask_index--;
@@ -93,14 +95,16 @@ contract ExchangeTX {
         return matchBid(bid_index, ask_index);
     }
 
-    function matchAsk(uint ask_index, uint bid_index) returns (bool) {
+    function matchAsk(uint ask_index, uint bid_index) internal returns (bool) {
         if(AskLedger[ask_index].amount <= 0 || AskLedger[ask_index].price > BidLedger[bid_index].price) {
+            cleanBidLedger();
             return true;
         }
         AskLedger[ask_index].amount--;
         BidLedger[bid_index].amount--;
         if(BidLedger[bid_index].amount <= 0) {
             if (bid_index <= 0) {
+                cleanBidLedger();
                 return true;
             }
             bid_index--;
@@ -109,7 +113,7 @@ contract ExchangeTX {
         return(matchAsk(ask_index, bid_index));
     }
 
-    function cleanBidLedger() returns (bool) {
+    function cleanBidLedger() internal returns (bool) {
         for(uint i = BidLedger.length; i > 0; i--) {
             if(BidLedger[i-1].amount > 0) {
                 BidLedger.length = i;
@@ -120,7 +124,7 @@ contract ExchangeTX {
         return false;
     }
 
-    function cleanAskLedger() returns (bool) {
+    function cleanAskLedger() internal returns (bool) {
         for(uint i = AskLedger.length; i > 0; i--) {
             if(AskLedger[i-1].amount > 0) {
                 AskLedger.length = i;
