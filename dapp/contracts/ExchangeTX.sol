@@ -4,10 +4,12 @@ contract ExchangeTX {
     struct Bid {
         uint price;
         uint amount;
+        address escrow;
     }
     struct Ask {
         uint price;
         uint amount;
+        address escrow;
     }
 
     Bid[] public BidLedger;
@@ -144,6 +146,10 @@ contract ExchangeTX {
     }
 
     function blockStampUpdate() {
+        // if(now > ()) {
+        //     BidLedger.length = 0;
+        //     AskLedger.length = 0;
+        // }
         BlockStamp = now;
     }
 
