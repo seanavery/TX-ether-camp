@@ -40,6 +40,7 @@ contract ExchangeTX {
         Bid memory b;
         b.price = _price;
         b.amount = _amount;
+        b.escrow = msg.sender;
         for(uint i = 0; i < BidLedger.length; i++) {
             if (BidLedger[i].price > _price) {
                 Bid[] memory tempLedger = new Bid[](BidLedger.length - i);
@@ -66,6 +67,7 @@ contract ExchangeTX {
         Ask memory a;
         a.price = _price;
         a.amount = _amount;
+        a.escrow = msg.sender;
         for(uint i = 0; i < AskLedger.length; i++) {
             if(AskLedger[i].price < _price) {
                 Ask[] memory tempLedger = new Ask[](AskLedger.length - i);
